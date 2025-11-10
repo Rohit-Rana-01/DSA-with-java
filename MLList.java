@@ -16,7 +16,7 @@ public class MLList {
         // initialising the head with the Mylist constroctor .
         Node head ;
         MyList(){
-             Node head = null ;  }
+             head = null ;  }
 
 
         // method for insertion at the end .
@@ -24,7 +24,6 @@ public class MLList {
             Node newnode = new Node(key , null);
 
             if( head == null){
-                newnode.data = key;
                 head = newnode;
             }else{
                 Node temp = head ;
@@ -64,6 +63,7 @@ public class MLList {
                     }
                     temp=temp.next;
                 }
+               
                 if(tempNext == null){
                     System.out.println("the not found . ");
                 }
@@ -73,6 +73,35 @@ public class MLList {
             }
         }
 
+        //Deletion of given element ....
+        
+        public void delete(int key){
+            Node current  = head ;
+            Node slow = null ;
+            Node fast = null ;
+            if(head == null ){
+                System.out.println("the liked list is empty nothing to delete..");
+                return;
+            }
+            if(head.data == key ){
+                head =head.next;
+            }else{
+                while(current != null ){
+
+                if(current.data == key ){
+                    fast = current.next;
+                    slow.next = fast ;
+                    System.out.println("deletion was successfull ");
+                    break;
+                    }
+                      slow = current ;
+                    current = current.next ;
+                }
+                 if( current == null){
+                    System.out.println("element was not found ;");
+                }
+            }
+        }
     }
         public static void main (String [] args){
             MyList LList = new MyList();
@@ -95,7 +124,10 @@ public class MLList {
             System.out.println("After insertion .");
 
             LList.display();
-        }
-        
+
+            LList.delete(10000);
+
+            LList.display();
+    }        
 
 }
