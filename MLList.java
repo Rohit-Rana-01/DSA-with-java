@@ -80,24 +80,29 @@ public class MLList {
             Node slow = null ;
             Node fast = null ;
             if(head == null ){
-                System.out.println("the liked list is empty nothing to delete..");
+                System.out.println("the linked list is empty nothing to delete..");
                 return;
             }
             if(head.data == key ){
-                head =head.next;
+                head = head.next;
+                System.out.println("deletion was successfull ");
             }else{
                 while(current != null ){
 
-                if(current.data == key ){
-                    fast = current.next;
-                    slow.next = fast ;
-                    System.out.println("deletion was successfull ");
-                    break;
+                    if(current.data == key ){
+                        fast = current.next;
+                        if(slow != null){
+                            slow.next = fast ;
+                        } else {
+                            head = fast;
+                        }
+                        System.out.println("deletion was successfull ");
+                        break;
                     }
-                      slow = current ;
+                    slow = current ;
                     current = current.next ;
                 }
-                 if( current == null){
+                if( current == null){
                     System.out.println("element was not found ;");
                 }
             }
