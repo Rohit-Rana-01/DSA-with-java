@@ -28,8 +28,8 @@ public class subarrays {
         return n ;
     }
     public static void main(String []args){
-        int array[] = {2,4,6,8};
-        System.out.print(subinfo(array));
+        int array[] = {2,-5,-1,6,-2,8};
+        System.out.print("total numbers of subarrays "+subinfo(array));
     }
 }
 
