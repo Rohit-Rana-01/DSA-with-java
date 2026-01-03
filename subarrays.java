@@ -50,10 +50,24 @@ public class subarrays {
         }
     }
 
+    // kadane's algo ...
+    public static void kadanesubarray(int array[]){
+        int cs = 0;
+        int maxsum = Integer.MIN_VALUE ;
+
+        for( int i = 0 ; i< array.length ; i++){
+           cs = array[i] + cs ;
+           if ( cs <= 0) cs = 0 ;
+           if( cs >= maxsum )maxsum = cs ;
+        }
+        System.out.println("the max sum is " + maxsum);
+    }
+
     public static void main(String []args){
-        int array[] = {2,-5,-1,6,-2,8};
+        int array[] = {-5,-1,-6,-2};
         //System.out.print("total numbers of subarrays "+subinfo(array));
-        subarrayprefix(array);
+        // subarrayprefix(array);
+        kadanesubarray(array);
     }
 }
 
