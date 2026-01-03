@@ -1,5 +1,8 @@
 import java.util.*;
 public class subarrays {
+
+
+    // mine approach ...
     public static int subinfo(int a[]){
         int largest = Integer.MIN_VALUE;
         int smallest= Integer.MAX_VALUE ;
@@ -27,9 +30,30 @@ public class subarrays {
         int n =(a.length * (a.length+ 1))/2;
         return n ;
     }
+
+    //prefix approach ...
+    public static void subarrayprefix(int array[]){
+        int largest = Integer.MIN_VALUE;
+        int prefix[] = new int[array.length] ;
+
+        // prefix calculation ...
+        for ( int i = 0 ; i < prefix.length ; i++){
+            prefix[i] = i == 0 ? array[i] :prefix[i-1] + array[i];
+        }
+        for(int i =0 ;i <array.length; i ++){
+            int sum = 0 ;
+            for(int j =i ; j< array.length; j++){
+                sum = i== 0 ? prefix[j] : prefix[j] - prefix[i-1] ;
+            }
+                if(sum > largest ) largest = sum ;
+                System.out.println(largest);
+        }
+    }
+
     public static void main(String []args){
         int array[] = {2,-5,-1,6,-2,8};
-        System.out.print("total numbers of subarrays "+subinfo(array));
+        //System.out.print("total numbers of subarrays "+subinfo(array));
+        subarrayprefix(array);
     }
 }
 
