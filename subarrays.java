@@ -1,11 +1,11 @@
-import java.util.*;
+
 public class subarrays {
 
 
     // mine approach ...
     public static int subinfo(int a[]){
         int largest = Integer.MIN_VALUE;
-        int smallest= Integer.MAX_VALUE ;
+
        
        
 
