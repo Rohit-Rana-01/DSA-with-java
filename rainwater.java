@@ -29,7 +29,7 @@ public class rainwater {
         return twater ;
     }
 
-    // advance using auxilary arrays .....or temporary arrays ...
+    // advance using auxilary arrays .....or temporary arrays ...or  prefix approach
     public static int trapadv(int[] height ){
         int n = height.length ;
         int twater = 0 ;
@@ -59,6 +59,18 @@ public class rainwater {
         return twater ;
     }
 
+    // two pointer approach ....
+    public static int twopointtrap(int[] height){
+        int twater = 0  ;
+        int left =0 ;
+        int right = height.length ;
+        int leftmax =height[0] ;
+        int rightmax = height[height.length-1];
+        return twater ;
+    }
+    //left and right pinter initialization .
+    //if left is greater then Right ..
+    // leftmax and rightmax 
     public static void main(String []args){
 
         int array[] ={ 4,2,0,6,3,2,5} ;
