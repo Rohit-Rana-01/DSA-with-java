@@ -63,9 +63,23 @@ public class rainwater {
     public static int twopointtrap(int[] height){
         int twater = 0  ;
         int left =0 ;
-        int right = height.length ;
+        int right = height.length-1 ;
         int leftmax =height[0] ;
         int rightmax = height[height.length-1];
+        
+        while(left < right){
+
+            if(height[left] < height[right]){
+                leftmax = Math.max(height[left],leftmax);
+                twater += leftmax-height[left] ;
+                left ++ ;
+            }else{
+                rightmax = Math.max(height[right] ,rightmax);
+                twater += rightmax - height[right] ;
+                right -- ;
+            }
+        }
+
         return twater ;
     }
     //left and right pinter initialization .
@@ -74,6 +88,6 @@ public class rainwater {
     public static void main(String []args){
 
         int array[] ={ 4,2,0,6,3,2,5} ;
-        System.out.println("the total rain water traped : "+trapadv(array));
+        System.out.println("the total rain water traped : "+twopointtrap(array));
     }
 }
