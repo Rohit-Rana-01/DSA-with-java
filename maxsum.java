@@ -37,7 +37,7 @@ public class maxsum {
 
     // final kadanes algo more appropriate  ;
     public static int finalmaxsubArray(int []nums){
-        int csum = nums[0] ;
+        int csum = 0;
         int maxsum = nums[0] ;
         for(int i=0 ; i<nums.length ; i++){
             csum = Math.max(csum +nums[i] , nums[i]);
