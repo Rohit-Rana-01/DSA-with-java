@@ -64,7 +64,7 @@ public class subarrays {
     }
 
     public static void main(String []args){
-        int array[] = {-5,-1,-6,-2};
+        int array[] = {-5,-1,6,2};
         //System.out.print("total numbers of subarrays "+subinfo(array));
         // subarrayprefix(array);
         kadanesubarray(array);
