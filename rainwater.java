@@ -6,7 +6,7 @@ public class rainwater {
         int waterl = 0 ;
 
         for(int i = 1; i<height.length-1 ; i++){
-            // left max heigth check ...
+            // left max height check ...
             int leftmax = 0 ;
             for(int  j = i ; j>=0 ; j -- ){
                 if (leftmax < height[j]) leftmax = height[j];
@@ -87,7 +87,7 @@ public class rainwater {
     // leftmax and rightmax 
     public static void main(String []args){
 
-        int array[] ={ 4,2,0,6,3,2,5} ;
+        int array[] ={ 0,1,0,2,1,0,1,3,2,1,2,1} ;
         System.out.println("the total rain water traped : "+twopointtrap(array));
     }
 }
